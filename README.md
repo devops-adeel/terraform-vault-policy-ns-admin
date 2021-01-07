@@ -10,7 +10,9 @@ No requirements.
 
 ## Inputs
 
-No input.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| `entity_ids` | List of Vault Identity Entity Member IDs | `list(any)` | `[]` | no |
 
 ## Outputs
 
