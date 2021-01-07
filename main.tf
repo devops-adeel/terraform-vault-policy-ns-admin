@@ -45,3 +45,14 @@ resource "vault_policy" "default" {
   name   = "namespace-admin"
   policy = data.vault_policy_document.default.hcl
 }
+
+resource "vault_identity_group" "default" {
+  name   = "namespace-admin"
+  type              = "internal"
+  policies          = ["default", vault_policy.default.name]
+  member_entity_ids = var.entity_ids != [] ? var.entity_ids : [vault_identity_entity.default.id]
+}
+
+resource "vault_identity_entity" "default" {
+  name = "default"
+}
