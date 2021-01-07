@@ -36,6 +36,7 @@ module "vault_admin_policy" {
   providers = {
     vault = vault.default
   }
+  entity_ids = [module.vault_approle.entity_id]
 }
 
 module "vault_approle" {
@@ -44,5 +45,4 @@ module "vault_approle" {
     vault = vault.default
   }
   application_name  = local.application_name
-  vault_policies = [module.vault_admin_policy.vault_policy_name]
 }
