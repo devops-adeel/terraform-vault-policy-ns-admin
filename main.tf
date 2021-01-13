@@ -1,3 +1,7 @@
+locals {
+  member_group_ids = var.group_ids != [] ? var.group_ids : [vault_identity_group.placeholder.id]
+}
+
 data "vault_policy_document" "default" {
   rule {
     path         = "sys/policies/acl/*"
@@ -50,9 +54,9 @@ resource "vault_identity_group" "default" {
   name   = "namespace-admin"
   type              = "internal"
   policies          = ["default", vault_policy.default.name]
-  member_entity_ids = var.entity_ids != [] ? var.entity_ids : [vault_identity_entity.default.id]
+  member_group_ids = local.member_group_ids
 }
 
-resource "vault_identity_entity" "default" {
-  name = "default"
+resource "vault_identity_group" "placeholder" {
+  name   = "default"
 }
