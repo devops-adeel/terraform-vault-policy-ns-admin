@@ -1,5 +1,5 @@
-variable "entity_ids" {
-  description = "List of Vault Identity Entity Member IDs"
+variable "group_ids" {
+  description = "List of Vault Identity Group Member IDs"
   type        = list(any)
   default     = []
 }

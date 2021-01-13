@@ -12,7 +12,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| `entity_ids` | List of Vault Identity Entity Member IDs | `list(any)` | `[]` | no |
+| `group_ids` | List of Vault Identity Entity Member IDs | `list(any)` | `[]` | no |
 
 ## Outputs
 
