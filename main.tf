@@ -51,12 +51,12 @@ resource "vault_policy" "default" {
 }
 
 resource "vault_identity_group" "default" {
-  name   = "namespace-admin"
-  type              = "internal"
-  policies          = ["default", vault_policy.default.name]
+  name             = "namespace-admin"
+  type             = "internal"
+  policies         = ["default", vault_policy.default.name]
   member_group_ids = local.member_group_ids
 }
 
 resource "vault_identity_group" "placeholder" {
-  name   = "default"
+  name = "default"
 }
