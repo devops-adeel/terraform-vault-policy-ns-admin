@@ -34,6 +34,16 @@ data "vault_policy_document" "default" {
     description  = "Manage the transit secrets engine"
   }
   rule {
+    path         = "azure/*"
+    capabilities = ["create", "read", "update", "delete", "list"]
+    description  = "Manage the azure secrets engine"
+  }
+  rule {
+    path         = "aws/*"
+    capabilities = ["create", "read", "update", "delete", "list"]
+    description  = "Manage the aws secrets engine"
+  }
+  rule {
     path         = "sys/mounts/*"
     capabilities = ["create", "read", "update", "delete", "list"]
     description  = "List existing & create new secrets engines."
