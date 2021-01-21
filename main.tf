@@ -20,8 +20,8 @@ data "vault_policy_document" "default" {
   }
   rule {
     path         = "sys/auth/*"
-    capabilities = ["read", "list"]
-    description  = "List auth methods"
+    capabilities = ["create", "read", "update", "delete", "list"]
+    description  = "Manage auth methods broadly across Vault Namespace"
   }
   rule {
     path         = "sys/auth"
@@ -40,6 +40,11 @@ data "vault_policy_document" "default" {
   }
   rule {
     path         = "transit/*"
+    capabilities = ["create", "read", "update", "delete", "list"]
+    description  = "Manage the transit secrets engine"
+  }
+  rule {
+    path         = "identity/*"
     capabilities = ["create", "read", "update", "delete", "list"]
     description  = "Manage the transit secrets engine"
   }
