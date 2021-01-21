@@ -61,10 +61,18 @@ resource "vault_policy" "default" {
 }
 
 resource "vault_identity_group" "default" {
-  name             = "namespace-admin"
-  type             = "internal"
-  policies         = ["default", vault_policy.default.name]
-  member_group_ids = local.member_group_ids
+  name              = "namespace-admin"
+  type              = "internal"
+  external_policies = true
+  member_group_ids  = local.member_group_ids
+}
+
+resource "vault_identity_group_policies" "default" {
+  exclusive = false
+  group_id  = vault_identity_group.default.id
+  policies = [
+    vault_policy.default.name,
+  ]
 }
 
 resource "vault_identity_group" "placeholder" {
