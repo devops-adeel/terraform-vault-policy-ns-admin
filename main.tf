@@ -20,7 +20,7 @@ data "vault_policy_document" "default" {
   }
   rule {
     path         = "sys/auth/*"
-    capabilities = ["create", "read", "update", "delete", "list"]
+    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
     description  = "Manage auth methods broadly across Vault Namespace"
   }
   rule {
