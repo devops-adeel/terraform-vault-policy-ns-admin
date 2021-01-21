@@ -9,17 +9,27 @@ data "vault_policy_document" "default" {
     description  = "Create and manage ACL policies"
   }
   rule {
+    path         = "sys/capabilities-self"
+    capabilities = ["read", "list"]
+    description  = "This endpoint returns the capabilities of client token on the given paths."
+  }
+  rule {
     path         = "auth/*"
     capabilities = ["create", "read", "update", "delete", "list", "sudo"]
     description  = "Manage auth methods broadly across Vault Namespace"
   }
   rule {
     path         = "sys/auth/*"
+    capabilities = ["read", "list"]
+    description  = "List auth methods"
+  }
+  rule {
+    path         = "sys/auth"
     capabilities = ["read"]
     description  = "List auth methods"
   }
   rule {
-    path         = "auth/token/create"
+    path         = "auth/token/*"
     capabilities = ["create", "read", "update", "delete", "list"]
     description  = "create child tokens"
   }
