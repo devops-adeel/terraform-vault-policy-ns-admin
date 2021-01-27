@@ -59,6 +59,11 @@ data "vault_policy_document" "default" {
     description  = "Manage the aws secrets engine"
   }
   rule {
+    path         = "gcp/*"
+    capabilities = ["create", "read", "update", "delete", "list"]
+    description  = "Manage the aws secrets engine"
+  }
+  rule {
     path         = "sys/mounts/*"
     capabilities = ["create", "read", "update", "delete", "list"]
     description  = "List existing & create new secrets engines."
