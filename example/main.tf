@@ -32,7 +32,7 @@ provider "vault" {
 
 
 module "vault_admin_policy" {
-  source = "git::https://github.com/devops-adeel/terraform-vault-policy-ns-admin.git"
+  source = "git::https://github.com/devops-adeel/terraform-vault-policy-ns-admin.git?ref=v0.5.0"
   providers = {
     vault = vault.default
   }
@@ -40,7 +40,7 @@ module "vault_admin_policy" {
 }
 
 module "vault_approle" {
-  source = "git::https://github.com/devops-adeel/terraform-vault-approle.git?ref=v0.3.0"
+  source = "git::https://github.com/devops-adeel/terraform-vault-approle.git?ref=v0.6.1"
   providers = {
     vault = vault.default
   }

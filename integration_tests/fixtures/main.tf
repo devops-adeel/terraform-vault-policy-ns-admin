@@ -25,11 +25,11 @@ module "default" {
   providers = {
     vault = vault.default
   }
-  group_ids = [module.vault_approle.group_id]
+  entity_ids = [module.vault_approle.entity_id]
 }
 
 module "vault_approle" {
-  source = "git::https://github.com/devops-adeel/terraform-vault-approle.git?ref=v0.5.0"
+  source = "git::https://github.com/devops-adeel/terraform-vault-approle.git?ref=v0.6.1"
   providers = {
     vault = vault.default
   }
@@ -47,14 +47,14 @@ resource "vault_approle_auth_backend_login" "default" {
 }
 
 provider "vault" {
-  alias = "integration"
+  alias     = "integration"
   namespace = trimsuffix(vault_namespace.default.id, "/")
-  token = vault_approle_auth_backend_login.default.client_token
+  token     = vault_approle_auth_backend_login.default.client_token
 }
 
 data "vault_auth_backend" "test" {
   provider = vault.integration
-  path = "token"
+  path     = "token"
 }
 
 output "vault_path" {

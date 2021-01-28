@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2021-01-28
+### Added
+- Added entity_id as members for identity group.
+
+### Removed
+- Removed group_id as members for identity group.
+
 ## [0.2.0] - 2021-01-20
 ### Changed
 - Added Azure and AWS secrets in path.
