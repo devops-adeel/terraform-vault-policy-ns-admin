@@ -1,3 +1,16 @@
+/**
+ * Usage:
+ *
+ * ```hcl
+ *
+ * module "vault_admin_policy" {
+ *   source = "git::https://github.com/devops-adeel/terraform-vault-policy-ns-admin.git?ref=v0.5.0"
+ *   entity_ids = [module.vault_approle.entity_id]
+ * }
+ * ```
+ */
+
+
 locals {
   member_entity_ids = var.entity_ids != [] ? var.entity_ids : [vault_identity_entity.default.id]
 }
@@ -11,7 +24,7 @@ data "vault_policy_document" "default" {
   rule {
     path         = "sys/capabilities-self"
     capabilities = ["read", "list"]
-    description  = "This endpoint returns the capabilities of client token on the given paths."
+    description  = "Endpoint returns capabilities of client token on given path"
   }
   rule {
     path         = "auth/*"
@@ -76,12 +89,12 @@ data "vault_policy_document" "default" {
 }
 
 resource "vault_policy" "default" {
-  name   = "namespace-admin"
+  name   = "admin"
   policy = data.vault_policy_document.default.hcl
 }
 
 resource "vault_identity_group" "default" {
-  name              = "namespace-admin"
+  name              = "admin"
   type              = "internal"
   external_policies = true
   member_entity_ids = local.member_entity_ids
@@ -101,7 +114,7 @@ data "vault_identity_entity" "default" {
 }
 
 resource "vault_identity_entity" "default" {
-  name = "ns-admin-default"
+  name = "admin"
   metadata = {
     env     = "dev"
     service = "example"
