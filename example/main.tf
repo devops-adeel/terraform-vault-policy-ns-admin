@@ -19,6 +19,8 @@ provider "vault" {
 
 locals {
   application_name = "example-application"
+  env              = "dev"
+  service          = "web"
 }
 
 resource "vault_namespace" "default" {
@@ -36,7 +38,7 @@ module "vault_admin_policy" {
   providers = {
     vault = vault.default
   }
-  group_ids = [module.vault_approle.group_id]
+  entity_ids = [module.vault_approle.entity_id]
 }
 
 module "vault_approle" {
@@ -45,4 +47,7 @@ module "vault_approle" {
     vault = vault.default
   }
   application_name = local.application_name
+  env              = local.env
+  service          = local.service
+  mount_accessor   = vault_auth_backend.default.accessor
 }
