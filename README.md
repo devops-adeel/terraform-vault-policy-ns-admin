@@ -1,3 +1,5 @@
+![inspec-test](https://github.com/devops-adeel/terraform-vault-policy-ns-admin/actions/workflows/terraform-apply.yml/badge.svg)
+
 # Terraform Vault Admin Policy
 
 This terraform module creates an admin policy with an ACL templated policy. This
