@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/compare/v0.5.2...v0.6.0) (2021-03-29)
+
+
+### Features
+
+* manage tfc secrets ([d5dbb36](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/commit/d5dbb36997b571bf6a2f62ee379a59124ad2043e))
+
 ### [0.5.2](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/compare/v0.5.1...v0.5.2) (2021-03-24)
 
 
