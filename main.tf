@@ -74,7 +74,12 @@ data "vault_policy_document" "default" {
   rule {
     path         = "gcp/*"
     capabilities = ["create", "read", "update", "delete", "list"]
-    description  = "Manage the aws secrets engine"
+    description  = "Manage the gcp secrets engine"
+  }
+  rule {
+    path         = "terraform/*"
+    capabilities = ["create", "read", "update", "delete", "list"]
+    description  = "Manage the tfc secrets engine"
   }
   rule {
     path         = "sys/mounts/*"
