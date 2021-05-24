@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/compare/v0.6.0...v0.7.0) (2021-05-24)
+
+
+### Features
+
+* Add OIDC Auth capabilities ([a7f5519](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/commit/a7f5519e58a02f9ae1f5cfbd9a3b75995f0c0186))
+
 ## [0.6.0](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/compare/v0.5.2...v0.6.0) (2021-03-29)
 
 
