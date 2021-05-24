@@ -47,6 +47,11 @@ data "vault_policy_document" "default" {
     description  = "create child tokens"
   }
   rule {
+    path         = "auth/oidc/*"
+    capabilities = ["create", "read", "update", "delete", "list"]
+    description  = "Configure the OIDC auth method"
+  }
+  rule {
     path         = "secret/*"
     capabilities = ["create", "read", "update", "delete", "list", "sudo"]
     description  = "List, create, update, and delete key/value secrets"
