@@ -4,7 +4,7 @@
  * ```hcl
  *
  * module "vault_admin_policy" {
- *   source = "git::https://github.com/devops-adeel/terraform-vault-policy-ns-admin.git?ref=v0.5.0"
+ *   source = "git::https://github.com/devops-adeel/terraform-vault-policy-ns-admin.git?ref=v0.8.0"
  *   entity_ids = [module.vault_approle.entity_id]
  * }
  * ```
