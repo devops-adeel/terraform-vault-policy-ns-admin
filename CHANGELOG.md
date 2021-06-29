@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/compare/v0.7.0...v0.8.0) (2021-06-29)
+
+
+### Features
+
+* updated required providers ([78b4319](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/commit/78b431908cd53c49149accc49c36f679028d9218))
+
 ## [0.7.0](https://www.github.com/devops-adeel/terraform-vault-policy-ns-admin/compare/v0.6.0...v0.7.0) (2021-05-24)
 
 
