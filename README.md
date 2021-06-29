@@ -11,20 +11,22 @@ Usage:
 ```hcl
 
 module "vault_admin_policy" {
-  source = "git::https://github.com/devops-adeel/terraform-vault-policy-ns-admin.git?ref=v0.5.0"
+  source = "git::https://github.com/devops-adeel/terraform-vault-policy-ns-admin.git?ref=v0.8.0"
   entity_ids = [module.vault_approle.entity_id]
 }
 ```
 
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_vault"></a> [vault](#requirement\_vault) | ~> 2.21.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_vault"></a> [vault](#provider\_vault) | n/a |
+| <a name="provider_vault"></a> [vault](#provider\_vault) | ~> 2.21.0 |
 
 ## Modules
 
